@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Number Operations | Rich Mohammad</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- HEADER (same as homepage) -->
+  <header class="site-header">
+    <div class="brand">
+      <div class="badge">RM</div>
+      <span class="brand-name">Rich Mohammad</span>
+    </div>
+
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="index.html#projects">Projects</a>
+    </nav>
+
+    <p class="class-label">BSCS 1 A</p>
+  </header>
+
+  <main class="calc-page">
+    <a class="back-link" href="index.html#projects">&larr; Back to Projects</a>
+
+    <section class="calc-card calc-pink">
+      <h1>Factorial, Sum &amp; Average</h1>
+      <p class="calc-desc">Enter N to work with the first N natural numbers.</p>
+
+      <form id="numbers-form">
+        <label for="n">Value of N (1 to 100)</label>
+        <input type="number" id="n" min="1" max="100" step="1" placeholder="Enter a whole number">
+
+        <button type="submit">Calculate</button>
+      </form>
+
+      <p class="error-message" id="message"></p>
+
+      <div class="result-list">
+        <div class="result-item">
+          <h2>Factorial (While Loop)</h2>
+          <p id="factorial-result">-</p>
+        </div>
+
+        <div class="result-item">
+          <h2>Sum (Do While Loop)</h2>
+          <p id="sum-result">-</p>
+        </div>
+
+        <div class="result-item">
+          <h2>Average (For Loop)</h2>
+          <p id="average-result">-</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Rich Mohammad &middot; BSCS 1 A</p>
+  </footer>
+
+  <script src="js/number-operations.js"></script>
+</body>
+</html>

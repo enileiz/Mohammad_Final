@@ -1,0 +1,604 @@
+/* ---------- 1. RESET & VARIABLES ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #faf1e6;
+  --ink: #111111;
+  --muted: #5c5050;
+  --brown: #8b6f3d;
+
+  --yellow: #fff56e;
+  --orange: #ff9f6e;
+  --pink: #ff8c8c;
+
+  --card-yellow: #faff9c;
+  --card-orange: #ffcd9f;
+  --card-pink: #ffc2ca;
+  --card-green: #c8ffc5;
+
+  --oval-gray: #d9d9d9;
+  --card-gray: #9b9795;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: var(--bg);
+  color: var(--ink);
+}
+
+/* ---------- 2. HEADER ---------- */
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin: 0 35px;
+  padding: 36px 0 14px;
+  border-bottom: 1px solid var(--brown);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 21px;
+}
+
+.badge {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  background-color: var(--yellow);
+  border: 2px solid var(--brown);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.brand-name {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.nav {
+  display: flex;
+  gap: 32px;
+}
+
+.nav a {
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+}
+
+.class-label {
+  font-size: 22px;
+  font-weight: 600;
+  margin-right: 50px;
+}
+
+/* ---------- 3. HERO ---------- */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 40px;
+  padding: 60px 60px 80px;
+  min-height: 80vh;
+}
+
+.hero-text {
+  padding-left: 22px;
+}
+
+.tag {
+  display: inline-block;
+  background-color: #ffffff;
+  border: 1px solid var(--brown);
+  padding: 16px 80px 16px 50px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.hero-text h1 {
+  margin-top: 60px;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.hero-text h1 span {
+  display: block;
+}
+
+.hero-text h1 .muted {
+  color: var(--muted);
+}
+
+.explore {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 363px;
+  margin-top: clamp(60px, 12vh, 170px);
+  padding-bottom: 48px;
+  border-bottom: 1px solid var(--ink);
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.explore .arrow {
+  font-size: 36px;
+  font-weight: 400;
+  margin-right: 12px;
+  transition: transform 0.2s;
+}
+
+.explore:hover .arrow {
+  transform: translateY(6px);
+}
+
+/* ---------- 4. HERO VISUAL (oval, tilted card, bubbles) ---------- */
+.hero-visual {
+  position: relative;
+  width: min(100%, 540px);
+  aspect-ratio: 540 / 620;
+  margin: 0 auto;
+}
+
+.oval {
+  position: absolute;
+  top: 0;
+  left: 16%;
+  width: 83%;
+  height: 100%;
+  background-color: var(--oval-gray);
+  border-radius: 50%;
+}
+
+.code-card {
+  position: absolute;
+  top: 50%;
+  left: 58%;
+  width: 62%;
+  height: 73%;
+  transform: translate(-50%, -50%) rotate(-15deg);
+  background-color: var(--card-gray);
+  border-radius: 28px;
+  padding: 22% 12% 0 18%;
+}
+
+.code-small {
+  color: #ffffff;
+  font-size: clamp(0.9rem, 2.2vw, 1.5rem);
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.code-big {
+  margin-top: 24px;
+  color: #ffe9b0;
+  font-size: clamp(1.5rem, 3.4vw, 2.6rem);
+  font-weight: 600;
+}
+
+.bubble {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: clamp(0.8rem, 1.4vw, 1.1rem);
+  font-weight: 600;
+  z-index: 2;
+}
+
+.bubble-html {
+  left: 0;
+  top: 26%;
+  width: 20%;
+  height: 15%;
+  background-color: var(--orange);
+}
+
+.bubble-js {
+  left: 79%;
+  top: 6%;
+  width: 20%;
+  height: 14%;
+  background-color: var(--pink);
+}
+
+.bubble-css {
+  left: 71%;
+  top: 72%;
+  width: 17%;
+  height: 13.5%;
+  background-color: var(--yellow);
+}
+
+/* ---------- 5. PROJECT CARDS ---------- */
+.projects {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 112px 72px;
+  padding: 100px 70px 140px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 293px;
+  padding: 30px 60px;
+  border-radius: 40px;
+  color: var(--ink);
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+.card h3,
+.card p {
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.card-yellow { background-color: var(--card-yellow); }
+.card-orange { background-color: var(--card-orange); }
+.card-pink   { background-color: var(--card-pink); }
+.card-green  { background-color: var(--card-green); }
+
+/* ---------- 6. RESPONSIVE: TABLET ---------- */
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 50px 30px 60px;
+    min-height: auto;
+  }
+
+  .hero-text {
+    padding-left: 0;
+  }
+
+  .projects {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 60px 30px 100px;
+  }
+}
+
+/* ---------- 7. RESPONSIVE: PHONE ---------- */
+@media (max-width: 600px) {
+  .site-header {
+    flex-wrap: wrap;
+    margin: 0 20px;
+    padding-top: 24px;
+  }
+
+  .badge {
+    width: 64px;
+    height: 64px;
+    font-size: 20px;
+  }
+
+  .brand-name {
+    font-size: 20px;
+  }
+
+  .class-label {
+    font-size: 18px;
+    margin-right: 0;
+  }
+
+  .nav {
+    order: 3;
+    width: 100%;
+  }
+
+  .tag {
+    padding: 14px 24px;
+    font-size: 16px;
+  }
+
+  .hero-text h1 {
+    font-size: 32px;
+  }
+
+  .explore {
+    font-size: 20px;
+    padding-bottom: 32px;
+  }
+
+  .card {
+    min-height: 200px;
+    padding: 24px;
+  }
+
+  .card h3,
+  .card p {
+    font-size: 18px;
+  }
+}
+
+/* ---------- 8. POLISH ---------- */
+
+/* Text highlight color when selecting text */
+::selection {
+  background-color: var(--yellow);
+}
+
+/* Nav links: animated underline */
+.nav a {
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s;
+}
+
+.nav a:hover {
+  text-decoration: none;
+  border-color: var(--ink);
+}
+
+/* Keyboard focus outline (helps accessibility) */
+a:focus-visible {
+  outline: 3px solid var(--brown);
+  outline-offset: 4px;
+}
+
+/* Floating bubbles */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-10px); }
+}
+
+.bubble-html { animation: float 4s ease-in-out infinite; }
+.bubble-js   { animation: float 5s ease-in-out infinite 0.5s; }
+.bubble-css  { animation: float 4.5s ease-in-out infinite 1s; }
+
+/* Gentle sway for the tilted code card */
+@keyframes sway {
+  0%, 100% { transform: translate(-50%, -50%) rotate(-15deg); }
+  50%      { transform: translate(-50%, -52%) rotate(-13deg); }
+}
+
+.code-card {
+  animation: sway 6s ease-in-out infinite;
+}
+
+/* Cards fade in when you scroll to them (JS adds these classes) */
+.card {
+  transition: transform 0.2s, box-shadow 0.2s, opacity 0.6s, translate 0.6s;
+}
+
+.card.reveal {
+  opacity: 0;
+  translate: 0 30px;
+}
+
+.card.reveal.visible {
+  opacity: 1;
+  translate: 0 0;
+}
+
+/* Footer */
+.site-footer {
+  margin: 0 35px;
+  padding: 28px 0 36px;
+  border-top: 1px solid var(--brown);
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+/* Turn off animations for people who prefer less motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+/* ---------- 9. FONTS ---------- */
+:root {
+  --font-body: "Inter", sans-serif;
+  --font-heading: "Space Grotesk", sans-serif;
+  --font-code: "JetBrains Mono", monospace;
+}
+
+body {
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Headings and display text */
+.brand-name,
+.badge,
+.class-label,
+.tag,
+.hero-text h1,
+.explore,
+.card h3,
+.card p {
+  font-family: var(--font-heading);
+}
+
+.hero-text h1 {
+  letter-spacing: -0.02em;
+}
+
+/* Code-style text */
+.code-small,
+.code-big,
+.bubble {
+  font-family: var(--font-code);
+}
+
+.code-small {
+  font-size: clamp(0.8rem, 1.8vw, 1.2rem);
+}
+
+.code-big {
+  font-weight: 700;
+}
+
+/* ---------- 10. CALCULATOR PAGES ---------- */
+.calc-page {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 60px 24px 100px;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 28px;
+  color: var(--ink);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+.calc-card {
+  padding: 48px;
+  border-radius: 40px;
+}
+
+.calc-yellow { background-color: var(--card-yellow); }
+.calc-orange { background-color: var(--card-orange); }
+.calc-pink   { background-color: var(--card-pink); }
+.calc-green  { background-color: var(--card-green); }
+
+.calc-card h1 {
+  font-family: var(--font-heading);
+  font-size: 36px;
+}
+
+.calc-desc {
+  margin: 8px 0 32px;
+  color: var(--muted);
+}
+
+.calc-card label {
+  display: block;
+  margin: 20px 0 8px;
+  font-weight: 600;
+}
+
+.calc-card select,
+.calc-card input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid var(--brown);
+  border-radius: 14px;
+  background-color: #ffffff;
+  font-family: var(--font-body);
+  font-size: 18px;
+}
+
+.calc-card button {
+  width: 100%;
+  margin-top: 28px;
+  padding: 16px;
+  border: none;
+  border-radius: 14px;
+  background-color: var(--ink);
+  color: #ffffff;
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.calc-card button:hover {
+  transform: translateY(-3px);
+}
+
+.result {
+  margin-top: 28px;
+  padding: 20px;
+  border: 1px solid var(--brown);
+  border-radius: 14px;
+  background-color: #ffffff;
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: 600;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .calc-card {
+    padding: 28px 20px;
+  }
+}
+
+/* ---------- 11. NUMBER OPERATIONS ---------- */
+.error-message {
+  margin-top: 16px;
+  min-height: 24px;
+  color: #b00020;
+  font-weight: 500;
+}
+
+.result-list {
+  margin-top: 12px;
+  display: grid;
+  gap: 14px;
+}
+
+.result-item {
+  padding: 16px 20px;
+  border: 1px solid var(--brown);
+  border-radius: 14px;
+  background-color: #ffffff;
+}
+
+.result-item h2 {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.result-item p {
+  margin-top: 6px;
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: 600;
+  word-break: break-all; /* keeps very long factorials inside the box */
+}
+
+/* ---------- 12. CALCULATOR NOTE ---------- */
+.calc-note {
+  margin-top: 24px;
+  font-size: 14px;
+  color: var(--muted);
+  text-align: center;
+}

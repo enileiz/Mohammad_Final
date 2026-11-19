@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Payroll | Rich Mohammad</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- HEADER (same as homepage) -->
+  <header class="site-header">
+    <div class="brand">
+      <div class="badge">RM</div>
+      <span class="brand-name">Rich Mohammad</span>
+    </div>
+
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="index.html#projects">Projects</a>
+    </nav>
+
+    <p class="class-label">BSCS 1 A</p>
+  </header>
+
+  <main class="calc-page">
+    <a class="back-link" href="index.html#projects">&larr; Back to Projects</a>
+
+    <section class="calc-card calc-green">
+      <h1>Simple Payroll</h1>
+      <p class="calc-desc">Compute weekly pay. Hours beyond 40 are paid as overtime (1.25x).</p>
+
+      <form id="payroll-form">
+        <label for="employee-name">Employee name (optional)</label>
+        <input type="text" id="employee-name" placeholder="e.g. Juan Dela Cruz">
+
+        <label for="hours">Hours worked</label>
+        <input type="number" id="hours" min="0" max="168" step="any" placeholder="e.g. 45">
+
+        <label for="rate">Hourly rate (₱)</label>
+        <input type="number" id="rate" min="0" step="any" placeholder="e.g. 100">
+
+        <label for="deductions">Deductions (₱, optional)</label>
+        <input type="number" id="deductions" min="0" step="any" placeholder="e.g. 500">
+
+        <button type="submit">Compute Pay</button>
+      </form>
+
+      <p class="error-message" id="message"></p>
+
+      <div class="result-list">
+        <div class="result-item">
+          <h2>Employee</h2>
+          <p id="employee-result">-</p>
+        </div>
+
+        <div class="result-item">
+          <h2>Regular Pay</h2>
+          <p id="regular-result">-</p>
+        </div>
+
+        <div class="result-item">
+          <h2>Overtime Pay</h2>
+          <p id="overtime-result">-</p>
+        </div>
+
+        <div class="result-item">
+          <h2>Gross Pay</h2>
+          <p id="gross-result">-</p>
+        </div>
+
+        <div class="result-item">
+          <h2>Deductions</h2>
+          <p id="deductions-result">-</p>
+        </div>
+
+        <div class="result-item">
+          <h2>Net Pay</h2>
+          <p id="net-result">-</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Rich Mohammad &middot; BSCS 1 A</p>
+  </footer>
+
+  <script src="js/payroll.js"></script>
+</body>
+</html>

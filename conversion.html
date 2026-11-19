@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conversion | Rich Mohammad</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- HEADER (same as homepage) -->
+  <header class="site-header">
+    <div class="brand">
+      <div class="badge">RM</div>
+      <span class="brand-name">Rich Mohammad</span>
+    </div>
+
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="index.html#projects">Projects</a>
+    </nav>
+
+    <p class="class-label">BSCS 1 A</p>
+  </header>
+
+  <main class="calc-page">
+    <a class="back-link" href="index.html#projects">&larr; Back to Projects</a>
+
+    <section class="calc-card calc-yellow">
+      <h1>Conversion</h1>
+      <p class="calc-desc">Convert temperature and length in one place.</p>
+
+      <form id="conversion-form">
+        <label for="conversion-type">Conversion type</label>
+        <select id="conversion-type">
+          <option value="c-to-f">Celsius to Fahrenheit</option>
+          <option value="f-to-c">Fahrenheit to Celsius</option>
+          <option value="m-to-ft">Meters to Feet</option>
+          <option value="ft-to-m">Feet to Meters</option>
+        </select>
+
+        <label for="value">Value</label>
+        <input type="number" id="value" step="any" placeholder="Enter a number">
+
+        <button type="submit">Convert</button>
+      </form>
+
+      <div class="result" id="result">Your answer will appear here.</div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Rich Mohammad &middot; BSCS 1 A</p>
+  </footer>
+
+  <script src="js/conversion.js"></script>
+</body>
+</html>
